@@ -33,10 +33,15 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_comments',
+    'mptt',
+    'tagging',
+    'zinnia',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -63,6 +68,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.request',
+                'zinnia.context_processors.version',
             ],
         },
     },
@@ -71,15 +79,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'nomnom_blog.wsgi.application'
 
 
-# Database
+# Database - Should be defined in local_settings
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+#   'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
 
 
 # Internationalization
@@ -94,6 +102,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+SITE_ID = 1
 
 
 # Static files (CSS, JavaScript, Images)
