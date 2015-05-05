@@ -1,0 +1,65 @@
+/*  Classes  */
+
+.navbar {
+	width: 975px
+}
+
+.navbar * {
+	margin: 0
+}
+
+.navbar td {
+	height: 60px !important;
+	vertical-align: middle;
+	white-space: nowrap
+}
+
+.navbar img {
+/*	Logo   */
+	padding: 0px 15px 0 0;
+}
+
+.navbar h5 {
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color:white;
+}
+
+.navbar a {
+	text-decoration: none;
+}
+
+.navbar a:hover p {
+	background-color: #33d4ca;
+}
+
+.navbar p {
+	line-height: 60px;
+	height: 60px;
+	display: inline-block;
+	font-weight: bold;
+	color: white;
+	padding: 0 15px
+}
+
+.navbar td.logo {
+	height: 60px;
+}
+
+.navbar td.logo a {
+	padding: 0 15px;
+}
+
+.navbar td.logo a:hover {
+	background-color: #33d4ca;
+}	
+
+.navbar td.logo * {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 60px;
+}
+
+#footer * {
+	text-align: left
+}

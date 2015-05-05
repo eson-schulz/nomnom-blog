@@ -1,0 +1,426 @@
+/*  Color Constants
+
+	Navy - 354358
+  	Blue - 3997dc
+	Green - 29ada5
+	Beige - e9e1d6 
+	Orange - eb6d5c 
+*/
+
+/*  Globals  */
+
+html {
+	overflow-x: hidden
+}
+
+a {
+	color: #3997dc;
+}
+
+a *.button {
+	text-decoration: none
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	line-height: 24px;
+	text-align: center
+}
+
+b {
+	font-weight: 700
+}
+
+h1 {
+	font-family: 'Pacifico', cursive;
+	font-size: 50px;
+	padding: 30px 0;
+	font-style: italic;
+	width: 100%;
+	text-align: center
+}
+
+h2 {
+	font-family: 'Pacifico', cursive;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	text-align: center;
+	width: 100%;
+	color: #29ada5;
+	padding-bottom: 20px;
+	font-weight: 700
+}
+
+h4 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	color: #29ada5;
+	font-weight: 700;
+	text-align: center
+}
+
+h5 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	color: #29ada5;
+	font-weight: 700;
+	text-align: center
+}
+
+td {
+	vertical-align: middle
+}
+
+li {
+	list-style: disc
+}
+
+
+input[type="text"], input[type="password"],
+textarea{
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	padding: 16px 0 16px 0;
+	text-indent: 10px;
+	background: #fff;
+	border: 0;
+	box-shadow: none;
+	width: 77%;
+	outline: none;
+	color: black !important;
+	border-radius: 4px;
+}
+
+input[type="submit"], input[type="button"], .button {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	padding: 16px 0;
+	color: #fff;
+	background: #354358;
+	border: 0;
+	border-radius: 4px;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover, .button:hover {
+	background: #eb6d5c;
+	cursor: pointer
+} 
+
+.background_orange input[type="submit"]:hover, .background_orange input[type="button"]:hover {
+	background: #29ada5;
+	cursor: pointer
+} 
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #919395;
+}
+input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder {
+	color: #919395;
+}
+input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder {
+	color: #919395;
+}
+
+/*  Classes  */
+.background_teal {
+    width: 100%;
+	background-color: #29aea5;
+}
+
+.background_orange {
+	width: 100%;
+	background-color: #eb6d5c;
+}
+
+.background_navy {
+	width: 100%;
+	background-color: #354358
+}
+
+	.background_teal *, .background_orange *, .background_navy * {
+		color: white
+	}
+
+.centered_container {
+    width: 960px;
+	margin:0 auto;
+}
+
+.vertical_padding {
+	padding: 40px 0;
+}
+
+.header_row div {
+		height: 0px;
+		width: 350px;
+		margin: 0 auto;
+		border: 1px #29ada5 solid;
+		margin-bottom: 20px
+	}
+
+.header_row_dark div {
+		height: 0px;
+		width: 350px;
+		margin: 0 auto;
+		border: 1px white solid;
+		margin-bottom: 20px
+	}
+
+	.header_row_dark * {
+		color: white;
+	}
+
+.subheader_row {
+	text-align: center
+}
+
+.subheader_row div {
+		height: 0px;
+		width: 175px;
+		margin: 0 auto;
+		border: 1px #29ada5 solid;
+		margin: 10px auto;
+		text-align: center
+	}
+	.subheader_row_dark div {
+		height: 0px;
+		width: 175px;
+		margin: 0 auto;
+		border-top: 1px white solid;
+		margin: 10px auto
+	}
+	.subheader_row_dark * {
+		color: white;
+		text-align: center
+	}
+	.subheader_row_dark td {
+		padding-bottom: 20px
+	}
+
+.seperate_columns td {
+	padding-left: 15px;
+	padding-right: 15px
+}
+
+.final_table_row td {
+	padding-bottom: 40px;
+}
+
+.blue_theme h1, .blue_theme h2, .blue_theme h3, .blue_theme h4, .blue_theme h5 {
+	color: #3997dc
+}
+	.blue_theme .header_row div {
+		border-color: #3997dc
+	}
+
+.hidden {
+	visibility: hidden
+}
+
+.side_note {
+	text-align: right;
+}
+
+/*  IDs  */
+
+#mission * {
+	text-align: center;
+	vertical-align: middle;
+}
+
+	#mission h2 {
+		line-height: 40px;
+		font-weight: 900;
+		font-style: italic;
+		font-family: 'Roboto', sans-serif;
+	}
+
+#hive {
+	margin-left: 40px;
+}
+
+#benefits p {
+	font-weight: 300;
+	line-height: 20px;
+}
+
+#team_advisors h4, #team_advisors p {
+	text-align: justify
+}
+	#team_advisors h4 {
+		padding-bottom: 5px
+	}
+	#team_advisors tr td {
+		padding-bottom: 40px
+	}
+	#team_advisors tr:last-child td {
+		padding-bottom: 0px !important
+	}
+	#team_advisors tr td:first-child {
+		padding-right: 40px
+	}
+	#team_advisors td {
+		vertical-align: middle
+	}
+
+.white_form {
+	margin-top: 15px
+}
+	.white_form, .white_form input, .white_form textarea {
+		width: 100%;
+	}
+	.white_form td[width="10"] {
+		padding: 5px 5px !important
+	}
+	.white_form td {
+		padding: 5px 0px;
+		text-align: center
+	}
+
+.full_row_submit input[type="submit"] {
+	margin: 10px 0 0 0;
+	width: 50%
+}
+
+#social {
+	width: 100%;
+	text-align: center
+}
+	
+	#social a img {
+		text-decoration: none
+	}
+
+	#social img {
+		margin: 0px 5px 15px 5px;
+		background-color: #eb6d5c;
+		-webkit-animation-delay: 100;
+		  animation-delay: 100;
+	}
+
+	#social img:hover {
+		background-color: #354358
+	}
+
+	#social h5 {
+		color: black
+	}
+
+.full_size_img_background {
+	background-image: url(http://previews.123rf.com/images/zurijeta/zurijeta1010/zurijeta101000192/8120362-two-cute-boys-laying-on-ground-in-nature-and-happily-eating-healthy-food.jpg);
+	width: 100%;
+	height: 100%;
+}
+
+.background_teal_transparent {
+	background-color: #29aea5;
+	height: 100%;
+	width: 100%
+}
+
+
+#registration_div {
+	height: 333px
+}
+
+#registration_div > div{
+	position: absolute;
+	height: 253px
+}
+
+.info_button {
+	width: 18% !important;
+	margin-left: 2px;
+}
+	.info_button + div {
+		display: none
+	}
+	.info_button:hover + div,
+	.info_button + div:hover{
+		cursor: default !important;
+		display: block;
+		position: absolute;
+		width: 300px;
+		top:200px;
+		background-color: white;
+		border-radius: 4px;
+		opacity: .9
+	}
+	.info_button + div p {
+		color: black
+	}
+
+#splash_div {
+	margin: 0 auto;
+	padding-top: 5%
+}
+
+#splash_div table {
+	width: 400px;
+	margin: auto;
+}
+
+#weeksOrder tr td{
+	border-left: #eb6d5c solid 2px;
+	width: 196px;
+	text-align: center;
+	vertical-align: top;
+	padding-top: 10px;
+	padding-bottom: 10px
+}
+
+#weeksOrder tr td.past {
+	opacity: .6;
+	color: gray
+}
+
+#weeksOrder tr td:first-child {
+	border: none
+}
+
+#weeksOrder tr td img {
+	padding: 10px 0
+}
+
+#weeksOrder tr td p.button {
+	width: 60%;
+	margin: 60px auto 0 auto;
+}
+
+#orderHistory {
+	width: 100%
+}
+
+#orderHistory td {
+	padding: 5px  10px;
+}
+	
+#orderHistory td * {
+	text-align: left;
+}
+
+#orderHistory td.row_sep {
+	height: 2px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: white
+}
+
+#orderHistory td:last-child *{
+	text-align: right
+}
+
+#orderHistory #total {
+	padding: 5px 0;
+	border-top: white solid 2px
+}
+
+.blah {
+	position: absolute;
+	height: 200px;
+	width: 200px
+}
