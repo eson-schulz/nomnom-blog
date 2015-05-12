@@ -30,23 +30,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'admin_tools',
-    'admin_tools.theming',
-    'admin_tools.menu',
-    'admin_tools.dashboard',
-    'admin_tools_zinnia',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_comments',
-    'mptt',
-    'tagging',
-    'zinnia',
-    'zinnia_wymeditor',
+    'tinymce',
 )
 
 MIDDLEWARE_CLASSES = (
