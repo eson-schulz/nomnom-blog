@@ -63,9 +63,9 @@
  	</div>
  	
  	{% if post1 %}
- 	<div class="vertical_padding centered_container">
- 		<div class="header_row">
- 			<h3>{{ post1.creation_date|date:"m/d/y" }} - {{ post1.title }}</h3>
+ 	<div class="background_teal vertical_padding blog post">
+ 		<div class="header_row_dark">
+ 			<h3 >{{ post1.creation_date|date:"m/d/y" }} - {{ post1.title }}</h3>
  			<div></div>
 		</div>
  		{{ post1.content|safe }}
@@ -73,12 +73,12 @@
  	{% endif %}
 
  	{% if post2 %}
- 	<div class="background_teal vertical_padding blog post">
+ 	<div class="vertical_padding blog post">
  		<div class="centered_container">
 			<table>
 				<tbody><tr>
 					<td>
-						<div class="header_row_dark">
+						<div class="header_row">
 							<h3>{{ post2.creation_date|date:"m/d/y" }} - {{ post2.title }}</h3>
 							<div></div>
 						</div>
@@ -122,9 +122,11 @@
 		<table>
 			<tbody><tr>
 				<td width="10%">
+					<div>
 					{% if past_url %}
 						<a href="{{ past_url }}"><h3 id="prev">&lt; Prev</h3></a>
 					{% endif %}
+					</div>
 				</td>
 				<td width="85%">
 					<div class="header_row">
@@ -133,9 +135,11 @@
 					</div>
 				</td>
 				<td width="10%">
+					<div>
 					{% if next_url %}
 						<a href="{{ next_url }}"><h3 id="next">Next &gt;</h3></a>
 					{% endif %}
+					</div>
 				</td>
 			</tr>
 		</tbody></table>
