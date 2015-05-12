@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,6 +106,7 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_media/')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
