@@ -112,6 +112,17 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+# TinyMCE Settings
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    #'custom_undo_redo_levels': 10,
+}
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True
+
+
 # Import local settings
 try:
     from local_settings import *
