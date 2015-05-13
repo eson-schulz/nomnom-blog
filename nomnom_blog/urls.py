@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     # WYSIWYG editor
-    (r'^tinymce/', include('tinymce.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
 
     # base url, no pages clicked
     url(r'^', include('blog.urls')),
