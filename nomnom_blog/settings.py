@@ -30,23 +30,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'admin_tools',
-    'admin_tools.theming',
-    'admin_tools.menu',
-    'admin_tools.dashboard',
-    'admin_tools_zinnia',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_comments',
-    'mptt',
-    'tagging',
-    'zinnia',
-    'zinnia_wymeditor',
+    'tinymce',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -115,10 +106,21 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_media/')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 )
+
+# TinyMCE Settings
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+}
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True
+
 
 # Import local settings
 try:

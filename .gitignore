@@ -51,6 +51,7 @@ coverage.xml
 *.log
 nomnom_blog/local_settings.py
 uploads/
+blog/migrations
 
 # Sphinx documentation
 docs/_build/
