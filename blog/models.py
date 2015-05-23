@@ -1,4 +1,5 @@
 from django.db import models
+from django.template.defaultfilters import slugify
 import datetime
 
 class Post(models.Model):
@@ -10,6 +11,13 @@ class Post(models.Model):
 	image = models.ImageField(upload_to='static/uploads/')
 	image2 = models.ImageField(upload_to='static/uploads/', null=True, blank=True)
 	image3 = models.ImageField(upload_to='static/uploads/', null=True, blank=True)
+
+	# Slug to nicely format url
+	slug = models.SlugField(unique=True)
+
+	def save(self, *args, **kwargs):
+		self.slug = slugify(self.title)
+		super(Post, self).save(*args, **kwargs)
 
 	def __unicode__(self):
 		return self.title
