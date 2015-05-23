@@ -6,5 +6,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     # Any page that has a number
     url(r'^(?P<page>[1-9][0-9]*)/$', views.index),
-    url(r'^post/', views.post),
+    # Speicific post
+    url(r'^(?P<post_slug>[\w\-]+)/$', views.post),
 ]
