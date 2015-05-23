@@ -15,9 +15,14 @@ class PostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ('title', 'content', 'image', 'image2', 'image3') 
+		fields = ('title', 'content', 'image', 'image2', 'image3', 'slug', 'date') 
 
 class PostAdmin(admin.ModelAdmin):
+	prepopulated_fields = {'slug':('title',)}
+	fieldsets = [
+		(None, {'fields': ['title', 'content', 'image', 'image2', 'image3']}),
+		('Advanced Information', {'fields': ['date', 'slug'], 'classes':['collapse']}),
+	]
 	form = PostForm
 
 admin.site.register(Post, PostAdmin)
