@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from zinnia.models.entry import Entry
+from .models import Post
 import math
 
 def index(request, page=1):
@@ -10,7 +10,7 @@ def index(request, page=1):
 	page = int(page)
 
 	# A list of every single blog post, sorted by creation date
-	entry_list = Entry.objects.order_by('-creation_date')
+	entry_list = Post.objects.order_by('-date')
 
 	# If the page doesn't exist, redirect to the first page
 	max_pages = int(math.ceil(len(entry_list) / 3.0))
@@ -37,3 +37,12 @@ def index(request, page=1):
 		context_dict['past_url'] = "/" + str(page + 1)
 
 	return render(request, 'index.html', context_dict)
+
+def post(request):
+	context_dict = {}
+
+	post_list = Post.objects.order_by('-date')
+
+	context_dict['post'] = post_list[0]
+
+	return render(request, 'blog-post.html', context_dict)
