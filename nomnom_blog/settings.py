@@ -126,4 +126,5 @@ TINYMCE_COMPRESSOR = True
 try:
     from local_settings import *
 except ImportError:
+    print "Make sure to create local settings"
     pass
