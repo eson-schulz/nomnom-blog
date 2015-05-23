@@ -38,11 +38,16 @@ def index(request, page=1):
 
 	return render(request, 'index.html', context_dict)
 
-def post(request):
+def post(request, post_slug):
 	context_dict = {}
 
-	post_list = Post.objects.order_by('-date')
-
-	context_dict['post'] = post_list[0]
+	# Try to render post with specific slug
+	try:
+		# Get the post with the specific slug
+		post = Post.objects.get(slug=post_slug)
+		context_dict['post'] = post
+	except Post.DoesNotExist:
+		# TODO - Render an error page: can't find page
+		pass
 
 	return render(request, 'blog-post.html', context_dict)
