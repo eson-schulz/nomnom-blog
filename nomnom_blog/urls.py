@@ -15,3 +15,6 @@ urlpatterns = [
     # base url, no pages clicked
     url(r'^', include('blog.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+admin.site.site_header = "NomNom Administration"
+admin.site.site_title = "NomNom admin"
