@@ -66,7 +66,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.i18n',
                 'django.core.context_processors.request',
-                'zinnia.context_processors.version',
             ],
         },
     },
