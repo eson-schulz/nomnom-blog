@@ -7,7 +7,7 @@ import datetime
 
 class PostForm(forms.ModelForm):
 	title = forms.CharField(max_length=80)
-	content = forms.CharField(widget=TinyMCE(attrs={'cols': 200, 'rows': 40}))
+	content = forms.CharField(widget=TinyMCE(attrs={'cols': 170, 'rows': 40}))
 	date = forms.DateField(widget=SelectDateWidget(), initial=datetime.date.today)
 	image = forms.ImageField()
 	image2 = forms.ImageField(required=False)
