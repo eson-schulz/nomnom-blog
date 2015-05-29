@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+
+   <title>Blog | NomNom Foods</title>
+<!--  <meta name="description" content="">-->
+<!--  <meta name="author" content="SitePoint">-->
+
+   	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/reset.css">
+   	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/styles.css">
+   	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/navbar.css">
+	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/animate.css">
+	
+	<style>
+		#pics {
+			width: 100%;
+			background-color: #eb6d5c;
+			line-height: 0px;
+			height: 100px;
+		}
+		#pic1 {
+			width: 1280px;
+			background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-206328.jpg);
+			background-position: center;
+			background-size: cover
+		}
+		#pics td {
+			vertical-align: bottom;
+		}
+		#pics div {
+			background-color: rgba(0,0,0,.5);
+			color: white;
+			padding: 300px 150px 30px 150px;
+			height: inherit;
+			max-height: 500px;
+			width: 980px;
+			cursor: pointer;
+		}
+		#pics div h1 {
+			text-align: left;
+			color: white;
+			font-style: normal;
+			line-height: 30px;
+			padding-top: -30px
+		}
+		#pics div h4 {
+			text-align: left;
+			width: 980px;
+			padding-bottom: 12px;
+			margin: 0 auto;
+			text-indent: 5px;
+			text-decoration: underline;
+			text-decoration-color: white;
+		}
+		#pics div p {
+			margin-left: 5px;
+			width: 700px;
+			text-align: justify;
+			line-height: 18px;
+		}
+		#pics div:hover {
+			background-color: rgba(0,0,0,.2);
+		}
+		
+		.stories {
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+		.story_cell {
+			width: 32%;
+			display: inline-block;
+			vertical-align: top;
+			margin-bottom: 40px;
+		}
+		
+		.story_cell:hover {
+			cursor: pointer;
+		}
+		
+		.story_cell h4 {
+			padding: 10px 0;
+/*			text-align: justify*/
+			color: #354358
+		}
+		
+		.story_cell:hover h4 {
+			text-decoration: underline;
+			text-decoration-color: black;
+		}
+		
+		.story_cell p {
+			font-size: 13px;
+			line-height: 1.4;
+			color: rgba(0,0,0,.6);
+			font-weight: 300;
+			text-align: justify;
+		}
+		
+		.story_cell:hover p {
+			color: black;
+		}
+		
+		.story_img {
+			width: 90%;
+			height: 200px;
+			background-position: center;
+			background-size: cover;
+			margin: 0 auto;
+		}
+		
+		.story_content {
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+		.email * * {
+			display: inline-block;
+			margin: 0 20px;
+		}
+		
+		.email input[type="text"] {
+			width: 300px !important;
+		}
+		
+	</style>
+	
+	<link href="Blog%20%7C%20NomNom%20Foods_files/css.css" rel="stylesheet" type="text/css">
+	
+    <script src="Blog%20%7C%20NomNom%20Foods_files/jquery_002.js"></script>
+	<script src="Blog%20%7C%20NomNom%20Foods_files/jquery.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	
+	<div class="background_teal">
+		
+		<table class="centered_container navbar">
+			<tbody><tr>
+				<td><img src="Blog%20%7C%20NomNom%20Foods_files/white_logo.png" id="logo" height="36"></td>
+				<td><h5>NomNom Foods</h5></td>
+				<td width="100%"></td>
+				<td class="link">
+					<a href="http://nomnomlunches.com/about.html"><p>About Us</p></a>
+					<a href="http://nomnomlunches.com/contact.html"><p>Contact Us</p></a>
+					<a href="#"><p>Blog</p></a>
+					<a href="#"><p>Sign In / Register</p></a>
+				</td>
+			</tr>
+		</tbody></table>
+	
+ 	</div>
+ 	
+ 	<table id="pics">
+ 		<tbody><tr>
+ 			<td id="pic1">
+ 				<div>
+ 					<h4>LATEST</h4>
+ 					<h1>Food Sources</h1>
+ 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Phasellus et congue eros. Maecenas scelerisque, nunc eu fermentum 
+tempor, justo dui cursus arcu, efficitur maximus dui lectus faucibus 
+lacus. Suspendisse non iaculis risus, eu posuere tellus. Nullam id 
+ullamcorper libero. In...</p>
+ 				</div>
+ 			</td>
+ 		</tr>
+ 	</tbody></table>
+ 	
+ 	<div class="centered_container" style="padding-top:40px">
+ 		<div class="header_row">
+			<h3>More Stories</h3>
+			<div></div>
+ 		</div>
+	</div>
+ 	<div>
+ 		<div class="stories">
+ 			<div>
+ 				<div class="story_cell">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-201964.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 				<div class="story_cell" style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-195358.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 				<div class="story_cell">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-190025.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+			</div><div>
+ 				<div class="story_cell">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183798.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 				<div class="story_cell" style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183731.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 				<div class="story_cell">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183716.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+			</div>
+		</div>
+				
+		<div class="background_teal email">
+			<div class="centered_container vertical_padding">
+				<h4>Sign up to get our blog articles sent directly to your email!</h4>
+				<input placeholder="E-mail Address" type="text">
+			</div>
+		</div>
+			
+		<div class="stories" style="padding-top:40px;">	
+				
+			<div>
+ 				<div class="story_cell">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183463.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 				<div class="story_cell" style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183454.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 				<div class="story_cell">
+ 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183455.jpg);">
+ 					</div>
+ 					<div class="story_content">
+ 						<h4>Title for a Food Story</h4>
+ 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
+tristique consectetur. Proin id quam porttitor, gravida turpis...
+ 						</p>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	
+ 	<div class="background_navy vertical_padding" id="footer">
+		<div class="centered_container">
+			<p>NomNom Foods 2015</p>
+		</div>
+	</div>
+ 	
+
+	
+</body></html>
