@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Should be in local_settings.py
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -111,14 +111,21 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # TinyMCE Settings
+TINYMCE_JS_URL = os.path.join(MEDIA_URL, 'tiny_mce.js')
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, 'tiny_mce/')
+
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': "table,spellchecker,paste",
     'theme': "advanced",
     'cleanup_on_startup': True,
 }
 TINYMCE_SPELLCHECKER = True
-TINYMCE_COMPRESSOR = True
+TINYMCE_COMPRESSOR = False
 
 
 # Import local settings
