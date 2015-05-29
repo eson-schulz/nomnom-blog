@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+<!doctype html>
 {% load staticfiles %}
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<html lang="en">
+<head>
    <meta charset="utf-8">
 
    <title>Blog | NomNom Foods</title>
@@ -13,57 +14,99 @@
    	<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
 	<link rel="stylesheet" href="{% static 'blog/animate.css' %}">
 	
+	
+		
+<!--	{% if not post.image3 %}-->
+
+	<script>
+	</script>
+
+<!--	{% endif %}-->
+	
 	<style>
-		#pics {
-			height: 300px;
-			width: 100%;
-		}
-		#pics div {
-			height: 100%;
-		}
 		
-		#pic1 {
-			background-image: url(/{{ post.image.url }});
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		#pic2 {
-			{% if post.image2 %}
-			background-image: url(/{{ post.image2.url }});
-			{% endif %}
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		#pic3 {
-			{% if post.image3 %}
-			background-image: url(/{{ post.image3.url }});
-			{% endif %}
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		
-		#post p, #post h3 {
-			text-align: justify !important;
+		#post h1 {
+			font-family: 'Pacifico', cursive;
+			font-size: 30px;
+			color: #29ada5;
 		}
 		
 		#post h2 {
-			margin: 24px 0;
-		}
-		
-		#post h3 {
 			font-family: 'Roboto', sans-serif;
 			font-size: 20px;
 			font-weight: 700;
 			color: black;
 			margin: 24px 0;
 			padding: 0px !important;
+			text-align: left !important;
+			margin: 24px 0;
+		}
+		
+		#post h3 {
+			font-family: 'Roboto', sans-serif;
+			font-size: 18px;
+			font-weight: 700;
+			color: black;
+			margin: 24px 0;
+			padding: 0px !important;
+		}
+		
+		#pics {
+			width: 100%;
+			background-color: #eb6d5c;
+			line-height: 0px;
+			min-height: 200px;
+		}
+		
+		#pics div {
+			display: inline;
+		}
+		
+/*		One Image ----------------------------------------------------------------*/
+		
+		{% if not post.image2 %}
+		
+		#pic1 {
+			max-width: 1280px;
+		}
+		
+		{% endif %}
+
+		#pic1 {
+			background-image: url(/{{ post.image.url }});
+		}
+		
+/*		Two or Three Images ------------------------------------------------------*/
+
+		{% if post.image2 %}
+		
+		#pic1, #pic2, #pic3 {
+			opacity: 0;
+		}
+
+		#pic2 {
+			background-image: url(/{{ post.image2.url}});
+		}
+		
+		{% endif %}
+			
+		{% if post.image3 %}
+
+		#pic3 {
+			background-image: url(/{{ post.image3.url}});
+		}
+		
+		{% endif %}
+			
+		#post p {
+			text-align: justify !important;
 		}
 	</style>
 	
-	<link href="{% static 'blog/css.css' %}" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,400italic,700,900italic' rel='stylesheet' type='text/css'>
 	
-    <script src="{% static 'blog/jquery_002.js' %}"></script>
-	<script src="{% static 'blog/jquery.js' %}"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+	<script src="{% static '/blog/jquery.viewportchecker.js' %}"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -75,22 +118,21 @@
 	<div class="background_teal">
 		
 		<table class="centered_container navbar">
-			<tbody><tr>
+			<tr>
 				<td><img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"></td>
 				<td><h5>NomNom Foods</h5></td>
 				<td width="100%"></td>
 				<td class="link">
-					<a href="http://nomnomlunches.com/about.html"><p>About Us</p></a>
-					<a href="http://nomnomlunches.com/contact.html"><p>Contact Us</p></a>
+					<a href="../about.html"><p>About Us</p></a>
+					<a href="../contact.html"><p>Contact Us</p></a>
 					<a href="#"><p>Blog</p></a>
 					<a href="#"><p>Sign In / Register</p></a>
 				</td>
 			</tr>
-		</tbody></table>
+		</table>
 	
  	</div>
-
-
+ 	
  	<div class="centered_container vertical_padding" id="title">
  		<h1>{{ post.title }}</h1>
  		<h4>By Vinay Khemlani</h4>
@@ -98,19 +140,27 @@
  	
  	<table id="pics">
  		<tr>
- 			<td id="pic1"><div id="pic1"</td>
- 			<td id="pic2"><div id="pic2"</td>
- 			<td id="pic3"><div id="pic3"</td>
+ 			<td><img id="pic1" src="/{{ post.image.url }}"></td>
+
+ 			{% if post.image2 %}
+ 			<td><img id="pic2" src="/{{ post.image2.url }}"></td>
+ 			{% endif %}
+
+ 			{% if post.image3 %}
+ 			<td><img id="pic3" src="/{{ post.image3.url }}"></td>
+ 			{% endif %}
+
  		</tr>
  	</table>
  	
-
  	<div class="centered_container vertical_padding horizontal_padding" id="post">
+
  		<!--Django content starts here-->
  		{{ post.content|safe }}
  		<!--Django content ends here-->
- 	</div>
-
+	</div>
+	
+</body>
 
 	<script>
 		var imgs = document.getElementById("post").getElementsByTagName("img");
@@ -120,7 +170,59 @@
 			console.log(padding);
 			imgs[i].style.padding = "10px " + padding + "px";
 		}
+		
+		console.log();
+		
+		
+		
+//		if two imgs
+		
+		{% if post.image2 %}
+		
+		var width = $(window).width()/2;
+		var pic1 = document.getElementById("pic1");
+		var pic2 = document.getElementById("pic2");
+		
+		pic1.style.width = width + "px";
+		pic2.style.width = width + "px";
+		pic1.style.opacity = pic2.style.opacity = "1";
+		
+		
+		console.log(pic1.height);
+		console.log(pic2.height);
+		
+		if (pic1.height > pic2.height) {
+			pic2.style.height = pic1.height + "px";
+		} else if (pic1.height < pic2.height) {
+			pic1.style.height = pic2.height + "px";
+		}
+		
+		{% endif %}
+		
+//		if three imgs
+			
+		{% if post.image3 %}
+		
+		var width = $(window).width()/3;
+		var pic1 = document.getElementById("pic1");
+		var pic2 = document.getElementById("pic2");
+		var pic3 = document.getElementById("pic3");
+		
+		pic1.style.width = pic2.style.width = pic3.style.width = width + "px";
+		pic1.style.opacity = pic2.style.opacity = pic3.style.opacity = "1";
+		
+		if (pic1.height > pic2.height && pic1.height > pic3.height) {
+			pic2.style.height  = pic3.style.height = pic1.height + "px";
+		} else if (pic2.height > pic1.height && pic2.height > pic3.height) {
+			pic1.style.height  = pic3.style.height = pic2.height + "px";
+		} else if (pic3.height > pic2.height && pic3.height > pic1.height) {
+			pic2.style.height  = pic1.style.height = pic3.height + "px";
+		}
+		
+		{% endif %}
+		
+		
 	</script>
 
 	
-</body></html>
+</html>
