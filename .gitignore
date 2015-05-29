@@ -52,6 +52,11 @@ coverage.xml
 nomnom_blog/local_settings.py
 uploads/
 blog/migrations
+media/
+static/admin
+static/django_tinymce
+nomnom/
+*.save
 
 # Sphinx documentation
 docs/_build/
