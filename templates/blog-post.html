@@ -71,10 +71,6 @@
 		}
 		
 		{% endif %}
-
-		#pic1 {
-			background-image: url(/{{ post.image.url }});
-		}
 		
 /*		Two or Three Images ------------------------------------------------------*/
 
@@ -82,18 +78,6 @@
 		
 		#pic1, #pic2, #pic3 {
 			opacity: 0;
-		}
-
-		#pic2 {
-			background-image: url(/{{ post.image2.url}});
-		}
-		
-		{% endif %}
-			
-		{% if post.image3 %}
-
-		#pic3 {
-			background-image: url(/{{ post.image3.url}});
 		}
 		
 		{% endif %}
