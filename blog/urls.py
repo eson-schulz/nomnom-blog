@@ -4,8 +4,8 @@ from blog import views
 urlpatterns = [
 
     url(r'^$', views.index, name='index'),
-    # Any page that has a number
-    url(r'^(?P<page>[1-9][0-9]*)/$', views.index),
-    # Speicific post
-    url(r'^(?P<post_slug>[\w\-]+)/$', views.post),
+    # Main index to link to other pages
+    url(r'^/$', views.index),
+    # Specific post
+    url(r'^post/(?P<post_slug>[\w\-]+)/$', views.post),
 ]
