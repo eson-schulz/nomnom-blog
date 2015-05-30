@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
    <meta charset="utf-8">
@@ -7,10 +9,10 @@
 <!--  <meta name="description" content="">-->
 <!--  <meta name="author" content="SitePoint">-->
 
-   	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/reset.css">
-   	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/styles.css">
-   	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/navbar.css">
-	<link rel="stylesheet" href="Blog%20%7C%20NomNom%20Foods_files/animate.css">
+   	<link rel="stylesheet" href="{% static 'blog/reset.css' %}">
+   	<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+   	<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/animate.css' %}">
 	
 	<style>
 		#pics {
@@ -21,7 +23,7 @@
 		}
 		#pic1 {
 			width: 1280px;
-			background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-206328.jpg);
+			background-image: url({{ latest_post.image.url }});
 			background-position: center;
 			background-size: cover
 		}
@@ -29,13 +31,14 @@
 			vertical-align: bottom;
 		}
 		#pics div {
-			background-color: rgba(0,0,0,.5);
 			color: white;
 			padding: 300px 150px 30px 150px;
 			height: inherit;
 			max-height: 500px;
-			width: 980px;
+			width: 100%;
 			cursor: pointer;
+			background-color: rgba(0,0,0,.5);
+
 		}
 		#pics div h1 {
 			text-align: left;
@@ -48,7 +51,6 @@
 			text-align: left;
 			width: 980px;
 			padding-bottom: 12px;
-			margin: 0 auto;
 			text-indent: 5px;
 			text-decoration: underline;
 			text-decoration-color: white;
@@ -126,10 +128,10 @@
 		
 	</style>
 	
-	<link href="Blog%20%7C%20NomNom%20Foods_files/css.css" rel="stylesheet" type="text/css">
+	<link href="{% static 'blog/css.css' %}" rel="stylesheet" type="text/css">
 	
-    <script src="Blog%20%7C%20NomNom%20Foods_files/jquery_002.js"></script>
-	<script src="Blog%20%7C%20NomNom%20Foods_files/jquery.js"></script>
+    <script src="{% static 'blog/jquery_002.js' %}"></script>
+	<script src="{% static 'blog/jquery.js' %}"></script>
 
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -142,7 +144,7 @@
 		
 		<table class="centered_container navbar">
 			<tbody><tr>
-				<td><img src="Blog%20%7C%20NomNom%20Foods_files/white_logo.png" id="logo" height="36"></td>
+				<td><img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"></td>
 				<td><h5>NomNom Foods</h5></td>
 				<td width="100%"></td>
 				<td class="link">
@@ -156,17 +158,13 @@
 	
  	</div>
  	
- 	<table id="pics">
+ 	<table id="pics" onclick="location.href='post/{{ latest_post.slug }}';">
  		<tbody><tr>
  			<td id="pic1">
  				<div>
  					<h4>LATEST</h4>
- 					<h1>Food Sources</h1>
- 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Phasellus et congue eros. Maecenas scelerisque, nunc eu fermentum 
-tempor, justo dui cursus arcu, efficitur maximus dui lectus faucibus 
-lacus. Suspendisse non iaculis risus, eu posuere tellus. Nullam id 
-ullamcorper libero. In...</p>
+ 					<h1>{{ latest_post.title }}</h1>
+ 					<p>{{ latest_post.content|striptags|truncatechars:280 }}</p>
  				</div>
  			</td>
  		</tr>
@@ -181,73 +179,22 @@ ullamcorper libero. In...</p>
  	<div>
  		<div class="stories">
  			<div>
- 				<div class="story_cell">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-201964.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
- 				<div class="story_cell" style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-195358.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
- 				<div class="story_cell">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-190025.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
-			</div><div>
- 				<div class="story_cell">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183798.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
- 				<div class="story_cell" style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183731.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
- 				<div class="story_cell">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183716.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
+ 				{% for post in first_posts %}
+	 				<div class="story_cell"  {% if forloop.counter == 2 or forloop.counter == 5 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
+	 					<div class="story_img" style="background-image: url({{ post.image.url }});">
+	 					</div>
+	 					<div class="story_content">
+	 						<h4>{{ post.title }}</h4>
+	 						<p>{{ post.content|striptags|truncatechars:195 }}
+	 						</p>
+	 					</div>
+	 				</div>
+
+	 				<!-- Creates a new line for more images -->
+	 				{% if forloop.counter == 3 and not forloop.last %}
+	 					<div></div>
+	 				{% endif %}
+ 				{% endfor %}
 			</div>
 		</div>
 				
@@ -258,44 +205,24 @@ tristique consectetur. Proin id quam porttitor, gravida turpis...
 			</div>
 		</div>
 			
+		{% if last_posts %}
 		<div class="stories" style="padding-top:40px;">	
 				
 			<div>
- 				<div class="story_cell">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183463.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
- 				<div class="story_cell" style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183454.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
- 				<div class="story_cell">
- 					<div class="story_img" style="background-image: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-183455.jpg);">
- 					</div>
- 					<div class="story_content">
- 						<h4>Title for a Food Story</h4>
- 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-ultricies facilisis metus, suscipit porttitor mi. Phasellus venenatis 
-tristique consectetur. Proin id quam porttitor, gravida turpis...
- 						</p>
- 					</div>
- 				</div>
+ 				 {% for post in last_posts %}
+	 				<div class="story_cell"  {% if forloop.counter == 2 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
+	 					<div class="story_img" style="background-image: url({{ post.image.url }});">
+	 					</div>
+	 					<div class="story_content">
+	 						<h4>{{ post.title }}</h4>
+	 						<p>{{ post.content|striptags|truncatechars:195 }}
+	 						</p>
+	 					</div>
+	 				</div>
+ 				{% endfor %}
  			</div>
  		</div>
+ 		{% endif %}
  	</div>
  	
  	<div class="background_navy vertical_padding" id="footer">
