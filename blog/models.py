@@ -21,6 +21,10 @@ class Post(models.Model):
 
 	def __unicode__(self):
 		return self.title
-		
+
 class Image(models.Model):
+	title = models.CharField(max_length=80)
 	image = models.ImageField()
+
+	def __unicode__(self):
+		return self.title
