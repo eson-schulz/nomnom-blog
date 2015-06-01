@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django import forms
 from tinymce.widgets import TinyMCE
-from .models import Post, Image
+from .models import Post, Image, Author
 from django.forms.extras.widgets import SelectDateWidget
 import datetime
 
 class PostForm(forms.ModelForm):
 	title = forms.CharField(max_length=80)
+	author = forms.ModelChoiceField(queryset=Author.objects.all())
 	content = forms.CharField(widget=TinyMCE(attrs={'cols': 170, 'rows': 40}))
 	date = forms.DateField(widget=SelectDateWidget(), initial=datetime.date.today)
 	image = forms.ImageField()
@@ -15,15 +16,16 @@ class PostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ('title', 'content', 'image', 'image2', 'image3', 'slug', 'date') 
+		fields = ('title', 'author', 'content', 'image', 'image2', 'image3', 'slug', 'date') 
 
 class PostAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug':('title',)}
 	fieldsets = [
-		(None, {'fields': ['title', 'content', 'image', 'image2', 'image3']}),
+		(None, {'fields': ['title', 'author', 'content', 'image', 'image2', 'image3']}),
 		('Advanced Information', {'fields': ['date', 'slug'], 'classes':['collapse']}),
 	]
 	form = PostForm
 
 admin.site.register(Post, PostAdmin)
+admin.site.register(Author)
 admin.site.register(Image)
