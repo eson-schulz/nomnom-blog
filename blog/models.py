@@ -7,6 +7,9 @@ class Post(models.Model):
 	content = models.TextField()
 	date = models.DateField(default=datetime.date.today)
 
+	# Author of post
+	author = models.ForeignKey('Author')
+
 	# Image ontop of the post
 	image = models.ImageField(upload_to='static/uploads/post/')
 	image2 = models.ImageField(upload_to='static/uploads/post/', null=True, blank=True)
@@ -27,6 +30,9 @@ class Author(models.Model):
 	biography = models.TextField()
 
 	picture = models.ImageField(upload_to='static/uploads/author/')
+
+	def __unicode__(self):
+		return self.name
 
 class Image(models.Model):
 	title = models.CharField(max_length=80)
