@@ -15,7 +15,7 @@ def blog(request, page=1):
 	# Creates a list of the rest of the posts
 	context_dict['more_posts'] = entry_list[1:]
 
-	return render(request, 'index.html', context_dict)
+	return render(request, 'blog.html', context_dict)
 
 def post(request, post_slug):
 	context_dict = {}
