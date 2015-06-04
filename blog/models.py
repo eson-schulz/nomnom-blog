@@ -7,6 +7,9 @@ class Post(models.Model):
 	content = models.TextField()
 	date = models.DateField(default=datetime.date.today)
 
+	# If not published, then don't display on website
+	published = models.BooleanField(default=False)
+
 	# Author of post
 	author = models.ForeignKey('Author')
 
