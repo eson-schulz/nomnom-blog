@@ -12,11 +12,8 @@ def blog(request, page=1):
 	# The first post
 	context_dict['latest_post'] = entry_list[0]
 
-	# Creates a list of the next 6
-	context_dict['first_posts'] = entry_list[1:7]
-
-	# Loads final three posts if open
-	context_dict['last_posts'] = entry_list[7:10]
+	# Creates a list of the rest of the posts
+	context_dict['more_posts'] = entry_list[1:]
 
 	return render(request, 'index.html', context_dict)
 

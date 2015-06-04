@@ -23,7 +23,7 @@
 		}
 		#pic1 {
 			width: 1280px;
-			background-image: url({{ latest_post.image.url }});
+			background-image: url(/{{ latest_post.image.url }});
 			background-position: center;
 			background-size: cover
 		}
@@ -139,26 +139,31 @@
 </head>
 
 <body>
-	
+		
 	<div class="background_teal">
 		
 		<table class="centered_container navbar">
 			<tbody><tr>
-				<td><img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"></td>
-				<td><h5>NomNom Foods</h5></td>
-				<td width="100%"></td>
-				<td class="link">
-					<a href="http://nomnomlunches.com/about.html"><p>About Us</p></a>
-					<a href="http://nomnomlunches.com/contact.html"><p>Contact Us</p></a>
-					<a href="/"><p>Blog</p></a>
-					<a href="#"><p>Sign In / Register</p></a>
-				</td>
-			</tr>
+				</tr><tr>
+					<td class="logo">
+						<a href="{% url 'blog' %}">
+							<img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"><h5>NomNom Foods</h5>
+						</a>
+					</td>
+					<td width="100%"></td>
+					<td class="link">
+						<a href="{% url 'about' %}"><p>About Us</p></a>
+						<a href=""><p>Contact Us</p></a>
+						<a href="{% url 'blog' %}"><p>Blog</p></a>
+						<a href="#"><p>Sign In / Register</p></a>
+					</td>
+				</tr>
+			
 		</tbody></table>
 	
  	</div>
  	
- 	<table id="pics" onclick="location.href='post/{{ latest_post.slug }}';">
+ 	<table id="pics" onclick="location.href='{% url 'post' latest_post.slug %}';">
  		<tbody><tr>
  			<td id="pic1">
  				<div>
@@ -179,9 +184,11 @@
  	<div>
  		<div class="stories">
  			<div>
- 				{% for post in first_posts %}
-	 				<div class="story_cell"  {% if forloop.counter == 2 or forloop.counter == 5 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
-	 					<div class="story_img" style="background-image: url({{ post.image.url }});">
+ 				<!-- Renders each post -->
+ 				{% for post in more_posts %}
+ 					<!-- If it's the center post, draw the lines around -->
+	 				<div class="story_cell"  {% if forloop.counter|add:"-2"|divisibleby:3 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
+	 					<div class="story_img" style="background-image: url(/{{ post.image.url }});">
 	 					</div>
 	 					<div class="story_content">
 	 						<h4>{{ post.title }}</h4>
@@ -190,39 +197,33 @@
 	 					</div>
 	 				</div>
 
+	 				<!-- Draws the email sign-up if more than 6 posts or last post -->
+	 				{% if forloop.counter == 6 or forloop.last and not forloop.counter > 6 %}			
+	 					</div>	
+	 					</div>
+
+						<div class="background_teal email">
+							<div class="centered_container vertical_padding">
+								<h4>Sign up to get our blog articles sent directly to your email!</h4>
+								<input placeholder="E-mail Address" type="text">
+							</div>
+						</div>
+
+						{% if not forloop.last %}
+ 						<div class="stories" style="padding-top:40px;">
+						<div>
+						{% endif %}
+						
+	 				{% endif %}
+
 	 				<!-- Creates a new line for more images -->
-	 				{% if forloop.counter == 3 and not forloop.last %}
+	 				{% if forloop.counter|divisibleby:3 and not forloop.last %}
 	 					<div></div>
 	 				{% endif %}
+
  				{% endfor %}
 			</div>
 		</div>
-				
-		<div class="background_teal email">
-			<div class="centered_container vertical_padding">
-				<h4>Sign up to get our blog articles sent directly to your email!</h4>
-				<input placeholder="E-mail Address" type="text">
-			</div>
-		</div>
-			
-		{% if last_posts %}
-		<div class="stories" style="padding-top:40px;">	
-				
-			<div>
- 				 {% for post in last_posts %}
-	 				<div class="story_cell"  {% if forloop.counter == 2 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
-	 					<div class="story_img" style="background-image: url({{ post.image.url }});">
-	 					</div>
-	 					<div class="story_content">
-	 						<h4>{{ post.title }}</h4>
-	 						<p>{{ post.content|striptags|truncatechars:195 }}
-	 						</p>
-	 					</div>
-	 				</div>
- 				{% endfor %}
- 			</div>
- 		</div>
- 		{% endif %}
  	</div>
  	
  	<div class="background_navy vertical_padding" id="footer">
