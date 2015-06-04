@@ -3,9 +3,9 @@ from blog import views
 
 urlpatterns = [
 
-    url(r'^$', views.index, name='index'),
-    # Main index to link to other pages
-    url(r'^/$', views.index),
+    url(r'^blog/$', views.blog, name='blog'),
+    # Static about page
+    url(r'^about/$', views.about, name='about'),
     # Specific post
-    url(r'^post/(?P<post_slug>[\w\-]+)/$', views.post),
+    url(r'^blog/post/(?P<post_slug>[\w\-]+)/$', views.post, name='post'),
 ]
