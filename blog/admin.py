@@ -16,14 +16,20 @@ class PostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ('title', 'author', 'content', 'image', 'image2', 'image3', 'slug', 'date') 
+		fields = ('title', 'author', 'content', 'image', 'image2', 'image3', 'published', 'slug', 'date') 
 
 class PostAdmin(admin.ModelAdmin):
+	# How the posts are displayed in a list
+	list_display = ('title', 'content', 'author', 'date', 'published')
+	# Automatically generate slug based on title
 	prepopulated_fields = {'slug':('title',)}
+	# Organize posts by date
+	ordering = ['date']
+
 	fieldsets = [
-		(None, {'fields': ['title', 'author', 'content', 'image', 'image2', 'image3']}),
+		(None, {'fields': ['published', 'title', 'author', 'content', 'image', 'image2', 'image3']}),
 		('Advanced Information', {'fields': ['date', 'slug'], 'classes':['collapse']}),
-	]
+	] 
 	form = PostForm
 
 admin.site.register(Post, PostAdmin)
