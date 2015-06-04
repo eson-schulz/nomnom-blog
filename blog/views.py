@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Post
 import math
 
-def index(request, page=1):
+def blog(request, page=1):
 	# Context dictionary passed to template
 	context_dict = {}
 
@@ -33,3 +33,6 @@ def post(request, post_slug):
 		pass
 
 	return render(request, 'blog-post.html', context_dict)
+
+def about(request):
+	return render(request, 'general/about.html')
