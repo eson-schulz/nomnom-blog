@@ -24,7 +24,7 @@ class PostAdmin(admin.ModelAdmin):
 	# Automatically generate slug based on title
 	prepopulated_fields = {'slug':('title',)}
 	# Organize posts by date
-	ordering = ['date']
+	ordering = ['-date']
 
 	fieldsets = [
 		(None, {'fields': ['published', 'title', 'author', 'content', 'image', 'image2', 'image3']}),
