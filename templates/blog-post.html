@@ -25,6 +25,48 @@
 	
 	<style>
 		
+		.share {
+			width: 580px;
+			margin: 0 auto;
+		}
+		
+		.share td * {
+			padding: 0 40px
+		}
+		
+		.share td h2 {
+			padding: 0px !important
+		}
+		
+		.share #twitter-widget-0 {
+			padding-top: 3px
+		}
+		
+		.author {
+			width: 700px;
+			padding: 40px 20px 0 20px;
+		}
+		
+		.author img {
+			padding-right: 20px;
+		}
+		
+		.author h4 {
+			text-align: justify !important;
+			color: #3997dc;
+			padding-bottom: 5px
+		}
+		
+		.author table td {
+			vertical-align: middle;
+		}
+		
+		.author p {
+			font-size: 15px;
+			line-height: 17px;
+			text-align: justify;
+		}
+		
 		#post h1 {
 			font-family: 'Pacifico', cursive;
 			font-size: 30px;
@@ -123,7 +165,7 @@
  	
  	<div class="centered_container vertical_padding" id="title">
  		<h1>{{ post.title }}</h1>
- 		<h4>By Vinay Khemlani</h4>
+ 		<h4>By {{ post.author.name }}</h4>
  	</div>
  	
  	<table id="pics">
@@ -146,7 +188,45 @@
  		<!--Django content starts here-->
  		{{ post.content|safe }}
  		<!--Django content ends here-->
+ 		
 	</div>
+		
+	<div class="background_teal">
+		<div class="centered_container vertical_padding share">
+			<table>
+				<tr>
+					<td>
+						<h2>Share the article!</h2>
+					</td>
+					<td>
+						<div style="padding-bottom:6px" class="fb-share-button" data-layout="button"></div> 
+					</td>
+					<td>	
+						<a class="twitter-share-button"
+						  href="https://twitter.com/intent/tweet"
+						  data-count="none"
+						  data-url="https://dev.twitter.com/web/tweet-button"
+						  data-text="Check out this article by NomNomFoods!">
+						Tweet</a>		 		 
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<div class="author blue_theme centered_container">
+		<table>
+			<tr>
+				<td>
+					<img src="/{{ post.author.picture.url  }}" height="180">
+				</td><td>
+					<h4>About the Author - {{ post.author.name }}</h4>
+					<p> {{ post.author.biography }}</p>
+				</td>
+			</tr>
+		</table>
+	</div>	
 	
 </body>
 
