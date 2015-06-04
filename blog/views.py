@@ -6,8 +6,8 @@ def blog(request, page=1):
 	# Context dictionary passed to template
 	context_dict = {}
 
-	# A list of every single blog post, sorted by creation date
-	entry_list = Post.objects.order_by('-date')
+	# A list of every published post, sorted by creation date
+	entry_list = Post.objects.order_by('-date').exclude(published=False)
 
 	# The first post
 	context_dict['latest_post'] = entry_list[0]
