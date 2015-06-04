@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+
+	<title>About Us | NomNom Foods</title>
+<!--  <meta name="description" content="">-->
+<!--  <meta name="author" content="SitePoint">-->
+
+	<link rel="stylesheet" href="{% static 'blog/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/animate.css' %}">
+	<link href="{% static 'blog/css.css' %}" rel="stylesheet" type="text/css">
+	
+    <script src="{% static 'blog/jquery_002.js' %}"></script>
+	<script src="{% static 'blog/jquery.js' %}"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	
+	<div class="background_teal">
+		
+		<table class="centered_container navbar">
+			<tbody><tr>
+				</tr><tr>
+					<td class="logo">
+						<a href="{% url 'blog' %}">
+							<img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"><h5>NomNom Foods</h5>
+						</a>
+					</td>
+					<td width="100%"></td>
+					<td class="link">
+						<a href="{% url 'about' %}"><p>About Us</p></a>
+						<a href=""><p>Contact Us</p></a>
+						<a href="{% url 'blog' %}"><p>Blog</p></a>
+						<a href="#"><p>Sign In / Register</p></a>
+					</td>
+				</tr>
+			
+		</tbody></table>
+	
+ 	</div>
+	
+<!--
+	<div class="centered_container header_row">
+		<h1>About Us</h1>
+		<div></div>
+	</div>
+-->
+	
+	<table class="centered_container" id="mission">
+		<tbody><tr>
+			<td colspan="3" class="header_row" style="padding-top:40px">
+				<h3>Our Mission</h3>
+				<div></div>
+			</td>
+		</tr>
+		<tr class="final_table_row">
+			<td>
+				<img src="{% static 'blog/about/quote_icon_orange.png' %}" height="100">
+			</td>
+			<td>
+				<h2>"To fight America’s obesity epidemic by providing K-12 students 
+nutritious and tasty meals by efficiently connecting schools, families, 
+and local restaurants through our website."</h2>
+			</td>
+			<td>
+				<img src="{% static 'blog/about/quote_end_icon_blue.png' %}" height="100">
+			</td>
+		</tr>
+	</tbody></table>
+	
+	<div class="background_orange vertical_padding">
+		<div class="centered_container header_row_dark">
+			<table>
+				<tbody><tr>
+					<td>
+						<h3>Our Story</h3>
+						<div></div>
+						<p>NomNom Foods was founded by two Harvard students who are driven
+ by their education, experiences in the social sector, and training in 
+morality and ethics; inspired by the opportunities enabled by 
+technology, and ready to fight obesity in America. NomNom Foods believes
+ that eating nutritious meals at the most impressionable period of a 
+person’s life helps build a foundation for happiness and success.</p> 
+					</td>
+					<td>
+						<img src="{% static 'blog/about/HIVE_semi.png' %}" id="hive" class="flipInY animated" height="250">
+					</td>
+				</tr>
+			</tbody></table></div>
+	</div>
+	
+	<div class="background_teal">
+		<table class="centered_container" id="benefits">
+			<tbody><tr>
+				<td colspan="6" class="header_row_dark" style="padding-top:40px">
+					<h3>Benefits</h3>
+					<div></div>
+				</td>
+			</tr>
+			<tr class="subheader_row_dark">
+				<td width="33%"><img id="family" class="bounceInLeft animated" src="{% static 'blog/about/family.png' %}" height="150"></td>
+				<td width="33%"><img id="community" class="bounceIn animated" src="{% static 'blog/about/community.png' %}" height="150"></td>
+				<td width="33%"><img id="school" class="bounceInRight animated" src="{% static 'blog/about/school.png' %}" height="150"></td>
+			</tr>
+			</tbody><tbody id="benefits_body" class="fadeInUpBig animated">
+				<tr class="subheader_row_dark">
+					<td>
+						<h4>Family</h4>
+						<div></div>
+					</td>
+					<td>
+						<h4>Community</h4>
+						<div></div>
+					</td>
+					<td>
+						<h4>School</h4>
+						<div></div>
+					</td>
+				</tr>
+
+				<tr class="seperate_columns subheader_row_dark">
+					<td>
+						<p><b>Nutritious:</b><br>Parents can be assured that every meal served through Nom Nom foods will meet strict nutritional standards and taste good.</p>
+					</td>
+					<td>
+						<p><b>Supporting Local Business:</b><br>Parents can be assured that every meal served through Nom Nom foods will meet strict nutritional standards and taste good.</p>
+					</td>
+					<td>
+						<p><b>Convenient:</b><br>Schools only have to provide a minimal amount of effort for delivered lunches to be distributed to students.</p>
+					</td>
+
+				
+				</tr>
+
+				<tr class="seperate_columns subheader_row_dark ">
+					<td>
+						<p><b>Convenient:</b><br>With NomNom Foods’ Smart Lunch 
+Technology, parents and students can make lunch orders online or with 
+their phone on their own time.</p>
+					</td>
+					<td>
+						<p><b>Community Service:</b><br>By serving children healthy and 
+tasty meals, restaurants can create lifelong brand loyalty while 
+simultaneously displaying social awareness by leading the fight against 
+obesity.</p>
+					</td>
+					<td>
+						<p><b>Cost-Effective:</b><br>NomNom Foods does not charge schools 
+to use its service, thereby creating a more cost effective alternative 
+to a cafeteria or catering service.</p>
+					</td>
+
+				
+				</tr>
+
+				<tr class="seperate_columns subheader_row_dark final_table_row">
+					<td>
+						<p><b>Flexible:</b><br>No more missed meals! Parents and students 
+have to opportunity to order the night before school from a variety of 
+local restaurants.</p>
+					</td>
+					<td></td>
+					<td>
+						<p><b>Nutritious:</b><br>Teachers and administrators can be assured that each and every meal provided through NomNom Foods will be tasty and nutritious.</p>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	<div class="centered_container vertical_padding blue_theme" id="team_advisors">
+		<div class="header_row">
+			<h3>Our Team</h3>
+			<div></div>
+		</div>
+		<table id="team">
+			<tbody><tr>
+				<td>
+					<img src="{% static 'blog/about/lauren.png' %}" class="zoomIn animated" height="180">
+				</td>
+				<td>
+					<h4>Lauren Swersky</h4>
+					<p>Lauren began her career as a Teach for America corps member in 
+New York City, where she saw firsthand the poor quality of school food 
+and its effects on student achievement. During her tenure working with 
+the Ministry of Education of Spain, she was inspired by schools’ 
+emphasis on health education and ability to provide all students with 
+nutritious lunches. She studied these topics, in addition to education 
+entrepreneurship and policy, in depth at Harvard Graduate School of 
+Education, where she received a Masters of Education. When she’s not 
+working, you can find her cooking, reading, or creating amateur 
+documentaries.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="{% static 'blog/about/sunha.png' %}" class="zoomIn animated" height="180">
+				</td>
+				<td>
+					<h4>Sunha Kim</h4>
+					<p>Sunha is a graduate of The Ohio State University and holds a 
+Masters of Theological Studies from Harvard Divinity School. His 
+experience primarily lies in political grassroots organizing, having 
+taken substantial roles in major political campaigns. Furthermore, he 
+has been passionate about social entrepreneurship for a decade. Sunha’s 
+vision for NomNom Foods to provide healthy meals to students lies within
+ his broader training in morality, ethics, and social justice that he 
+received while at Harvard.</p>
+				</td>
+			</tr>
+		</tbody></table>
+		<div class="header_row" style="margin-top:20px">
+			<h3>Our Advisors</h3>
+			<div></div>
+		</div>
+		<table id="advisors">
+			<tbody><tr>
+				<td>
+					<h4>Tanner Puckett</h4>
+					<p>Tanner is an Innovation, Operations, and Growth Consultant and a
+ former Officer in the United States Navy. He is a graduate from the 
+University of Virginia and also holds a Masters in Business 
+Administration from Thunderbird School of Global Management. Having 
+worked extensively in the food industry with ConAgra Foods and Abbott 
+Nutrition Tanner’s experience and knowledge is ideal for advising NomNom
+ Foods.</p>
+				</td>
+				<td>
+					<img src="{% static 'blog/about/tanner.png' %}" class="zoomIn animated" height="180">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Loic Verstraete</h4>
+					<p>Loic is a Quality Assurance Engineer at a Boston based 
+technology company. After completing his education in France, Loic moved
+ to the United States and has worked with major technological 
+corporations such as Samsung and LG. Loic’s vast experience in the tech 
+industry makes him an ideal advisor for NomNom Foods.</p>
+				</td>
+				<td>
+					<img src="{% static 'blog/about/loic.png' %}" class="zoomIn animated" height="180">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h4>Lindsey Poole </h4>
+					<p>Lindsey  is a Communications Coordinator and a graduate of The 
+Ohio State University with degrees in journalism and French. Her writing
+ experience covers several platforms including weekly and daily 
+newspapers, magazines, and online publications. She specializes in 
+social media engagement and branding for niche publications and has been
+ advising NomNom Foods since its launch.</p>
+				</td>
+				<td>
+					<img src="{% static 'blog/about/lindsey.png' %}" class="zoomIn animated" height="180">
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+	
+	<div class="background_navy vertical_padding" id="footer">
+		<div class="centered_container">
+			<p>NomNom Foods 2015</p>
+		</div>
+	</div>
+	
+    <script>
+		
+		var selectors = ['#family', "#school", '#community', '#benefits_body', '.zoomInLeft', '.zoomInRight', '#hive', '.zoomIn']
+        $(document).ready(function(){
+			
+			for (i = 0; i < selectors.length; i++) { 
+				$(selectors[i]).viewportChecker({
+					classToAdd: 'animated',
+					classToRemove: 'hidden'
+				});
+			}			
+        });
+    </script>
+	
+
+	
+
+</body></html>
