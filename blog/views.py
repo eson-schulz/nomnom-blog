@@ -31,10 +31,14 @@ def post(request, post_slug):
 
 	return render(request, 'blog-post.html', context_dict)
 
-# Redirects any call to blog
-def blog_redirect(request):
-	return redirect('blog')
-
 # Simple about page
 def about(request):
 	return render(request, 'general/about.html')
+
+# Simple index page
+def index(request):
+	return render(request, 'general/index.html')
+
+# Simple contact page
+def contact(request):
+	return render(request, 'general/contact.html')
