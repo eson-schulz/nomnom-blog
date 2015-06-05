@@ -3,8 +3,10 @@ from blog import views
 
 urlpatterns = [
 
-	# Base url will redirect to blog
-	url(r'^$', views.blog_redirect, name='blog_redirect'),
+	# Base url
+	url(r'^$', views.index, name='index'),
+	# Contact page
+	url(r'^contact/$', views.contact, name='contact'),
 	# Main blog page
     url(r'^blog/$', views.blog, name='blog'),
     # Static about page
