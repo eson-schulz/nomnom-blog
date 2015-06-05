@@ -23,7 +23,7 @@
 		}
 		#pic1 {
 			width: 1280px;
-			background-image: url(/{{ latest_post.image.url }});
+			background-image: url({{ latest_post.image.url }});
 			background-position: center;
 			background-size: cover
 		}
@@ -187,7 +187,7 @@
  				{% for post in more_posts %}
  					<!-- If it's the center post, draw the lines around -->
 	 				<div class="story_cell"  {% if forloop.counter|add:"-2"|divisibleby:3 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
-	 					<div class="story_img" style="background-image: url(/{{ post.image.url }});">
+	 					<div class="story_img" style="background-image: url({{ post.image.url }});">
 	 					</div>
 	 					<div class="story_content">
 	 						<h4>{{ post.title }}</h4>
