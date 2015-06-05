@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+
+   <title>NomNom Foods</title>
+<!--  <meta name="description" content="">-->
+<!--  <meta name="author" content="SitePoint">-->
+
+   	<link rel="stylesheet" href="{% static 'blog/reset.css' %}">
+   	<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+   	<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/animate.css' %}">
+	<link href="{% static 'blog/css.css' %}" rel="stylesheet" type="text/css">
+	
+    <script src="{% static 'blog/jquery_002.js' %}"></script>
+	<script src="{% static 'blog/jquery.js' %}"></script>
+  
+	<style>
+		/*		Overrides		*/
+		html {
+			background-image: url({% static 'blog/index/salad_background.png' %});
+			background-size: cover;
+			height: 100%;
+			width: 100%;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center
+		}
+		h1 {
+			font-size: 40px;
+			color: white
+		}
+		.button {
+			background-color: white;
+			color: black
+		}
+		.button:hover {
+			background-color: #eb6d5c;
+			color: white
+		}
+	
+	</style>
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	
+	<div>
+		
+		<table class="centered_container navbar">
+			<tbody><tr>
+				<td width="100%"></td>
+				<td class="link">
+						<a href="{% url 'about' %}"><p>About Us</p></a>
+						<a href="#"><p>Contact Us</p></a>
+						<a href="{% url 'blog' %}"><p>Blog</p></a>
+				</td>
+			</tr>
+		</tbody></table>
+	
+ 	</div>
+ 	
+	<div id="splash_div">
+		<table>
+			<tbody><tr>
+				<td colspan="3">
+					<img src="{% static 'blog/index/white_logo_splash.png' %}">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<h1>NomNom Foods</h1>
+				</td>
+			</tr>
+			<!--
+				<tr><td width="200px">
+					<p class="button">Sign In</p>
+				</td>
+			<td width="10px"></td>
+				<td width="200px">
+					<a href="ftp://74.208.23.209/register.html" style="text-decoration:none"><p class="button">Register</p></a>
+				</td>
+			</tr>
+		-->
+		</tbody></table>
+	</div>
+
+
+
+</body></html>

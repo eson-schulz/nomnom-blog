@@ -1,0 +1,134 @@
+<!doctype html>
+
+{% load staticfiles %}
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+
+   <title>Contact Us | NomNom Foods</title>
+<!--  <meta name="description" content="">-->
+<!--  <meta name="author" content="SitePoint">-->
+
+   	<link rel="stylesheet" href="{% static 'blog/reset.css' %}">
+   	<link rel="stylesheet" href="{% static 'blog/styles.css' %}">
+   	<link rel="stylesheet" href="{% static 'blog/navbar.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/animate.css' %}">
+	<link href="{% static 'blog/css.css' %}" rel="stylesheet" type="text/css">
+	
+    <script src="{% static 'blog/jquery_002.js' %}"></script>
+	<script src="{% static 'blog/jquery.js' %}"></script>
+
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	
+	<div class="background_teal">
+		
+	<div class="background_teal">
+		
+		<table class="centered_container navbar">
+			<tbody><tr>
+				</tr><tr>
+					<td class="logo">
+						<a href="{% url 'index' %}">
+							<img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"><h5>NomNom Foods</h5>
+						</a>
+					</td>
+					<td width="100%"></td>
+					<td class="link">
+						<a href="{% url 'about' %}"><p>About Us</p></a>
+						<a href="{% url 'contact' %}"><p>Contact Us</p></a>
+						<a href="{% url 'blog' %}"><p>Blog</p></a>
+					</td>
+				</tr>
+			
+		</tbody></table>
+	
+ 	</div>
+	
+	<div class="centered_container vertical_padding blue_theme">
+		<div class="header_row">
+			<h3>Social Media</h3>
+			<div></div>
+		</div>
+		<div >
+			<table id="social">
+				<tr>
+					<td>
+						<a href="https://www.facebook.com/pages/NomNom-Foods/810219402382011?ref=hl" target="_blank">
+						   <img src="{% static 'blog/contact/fb_button.png' %}" height="100" class="rotateIn animated">
+						</a>
+					</td>
+					<td>
+						<a href="https://twitter.com/NomNom_Foods" target="_blank">
+							<img src="{% static 'blog/contact/twitter_button.png' %}" height="100" class="rotateIn animated">
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h5>Like us on Facebook at <a href="https://www.facebook.com/pages/NomNom-Foods/810219402382011?ref=hl" target="_blank">NomNom Foods</a></h5>
+					</td>
+					<td>
+						<h5>Follow us on Twitter at <a href="https://twitter.com/NomNom_Foods" target="_blank">@NomNom_Foods</a></h5>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="background_teal vertical_padding">
+		<div class="header_row_dark">
+			<h3>Send Us an Email</h3>
+			<div></div>
+		</div>
+		<div class="centered_container">
+			<p>Fill out the form below to send us an email with any questions, comments or concerns<br>and we'll get back to you as soon as we can!</p>
+			<form>
+				<table class="white_form">
+					<tr>
+						<td>
+							<input type="text" placeholder="First Name*">
+						</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" placeholder="Last Name*">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" placeholder="Email Address*">
+						</td>
+						<td width="10"></td>
+						<td>
+							<input type="text" placeholder="Subject*">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<textarea placeholder="Message*" rows="4"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="full_row_submit">
+							<input type="submit">
+						</td>
+					</tr>
+				
+				</table>
+<!--
+				<input type="text" placeholder="PlaceHOldaaaa">
+				<input type="submit">
+-->
+			</form>
+		</div>
+		
+	</div>
+	
+</body>
+
+</html>
