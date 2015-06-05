@@ -85,7 +85,7 @@ li {
 }
 
 
-input[type="text"], input[type="password"],
+input[type="text"], input[type="email"], input[type="password"],
 textarea{
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;

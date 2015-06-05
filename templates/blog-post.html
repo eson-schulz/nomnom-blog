@@ -169,14 +169,14 @@
  	
  	<table id="pics">
  		<tr>
- 			<td><img id="pic1" src="/{{ post.image.url }}"></td>
+ 			<td><img id="pic1" src="{{ post.image.url }}"></td>
 
  			{% if post.image2 %}
- 			<td><img id="pic2" src="/{{ post.image2.url }}"></td>
+ 			<td><img id="pic2" src="{{ post.image2.url }}"></td>
  			{% endif %}
 
  			{% if post.image3 %}
- 			<td><img id="pic3" src="/{{ post.image3.url }}"></td>
+ 			<td><img id="pic3" src="{{ post.image3.url }}"></td>
  			{% endif %}
 
  		</tr>
@@ -218,7 +218,7 @@
 		<table>
 			<tr>
 				<td>
-					<img src="/{{ post.author.picture.url  }}" height="180">
+					<img src="{{ post.author.picture.url  }}" height="180">
 				</td><td>
 					<h4>About the Author - {{ post.author.name }}</h4>
 					<p> {{ post.author.biography }}</p>
