@@ -31,16 +31,15 @@
 			<tbody><tr>
 				</tr><tr>
 					<td class="logo">
-						<a href="{% url 'blog' %}">
+						<a href="{% url 'index' %}">
 							<img src="{% static 'blog/white_logo.png' %}" id="logo" height="36"><h5>NomNom Foods</h5>
 						</a>
 					</td>
 					<td width="100%"></td>
 					<td class="link">
 						<a href="{% url 'about' %}"><p>About Us</p></a>
-						<a href=""><p>Contact Us</p></a>
+						<a href="{% url 'contact' %}"><p>Contact Us</p></a>
 						<a href="{% url 'blog' %}"><p>Blog</p></a>
-						<a href="#"><p>Sign In / Register</p></a>
 					</td>
 				</tr>
 			
