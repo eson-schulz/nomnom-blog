@@ -55,6 +55,7 @@ blog/migrations
 media/
 static/admin
 static/django_tinymce
+static/endless_pagination
 nomnom/
 *.save
 
