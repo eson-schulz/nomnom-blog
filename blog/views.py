@@ -1,10 +1,13 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, RequestContext, render_to_response
 from .models import Post
 import math
 
-def blog(request, page=1):
+def blog(request, template='blog.html', short_template='blog_short.html', page=1):
 	# Context dictionary passed to template
 	context_dict = {}
+
+	# Add the short template location
+	context_dict['short_template'] = short_template
 
 	# A list of every published post, sorted by creation date
 	entry_list = Post.objects.order_by('-date').exclude(published=False)
@@ -15,7 +18,12 @@ def blog(request, page=1):
 	# Creates a list of the rest of the posts
 	context_dict['more_posts'] = entry_list[1:]
 
-	return render(request, 'blog.html', context_dict)
+	# Used for endless post loading
+	if request.is_ajax():
+		template = short_template
+
+	# Render the request
+	return render_to_response(template, context_dict, context_instance=RequestContext(request))
 
 def post(request, post_slug):
 	context_dict = {}

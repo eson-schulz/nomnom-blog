@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load endless %}
 
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -133,9 +134,9 @@
     <script src="{% static 'blog/jquery_002.js' %}"></script>
 	<script src="{% static 'blog/jquery.js' %}"></script>
 
-  <!--[if lt IE 9]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+	  <!--[if lt IE 9]>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	  <![endif]-->
 </head>
 
 <body>
@@ -182,52 +183,7 @@
  		<div class="stories">
  			<div>
  				<!-- Renders each post -->
- 				{% for post in more_posts %}
- 					<!-- If it's the center post, draw the lines around -->
-	 				<div class="story_cell"  {% if forloop.counter|add:"-2"|divisibleby:3 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
-	 					<div class="story_img" style="background-image: url({{ post.image.url }});">
-	 					</div>
-	 					<div class="story_content">
-	 						<h4>{{ post.title }}</h4>
-	 						<p>{{ post.content|striptags|truncatechars:195 }}
-	 						</p>
-	 					</div>
-	 				</div>
-
-	 				<!-- Draws the email sign-up if more than 6 posts or last post -->
-	 				{% if forloop.counter == 6 or forloop.last and not forloop.counter > 6 %}			
-	 					</div>	
-	 					</div>
-
-						<div class="background_teal email">
-							<div class="centered_container vertical_padding">
-								<h4>Sign up to get our blog articles sent directly to your email!</h4>
-								<!-- Begin MailChimp Signup Form -->
-								<form action="//nomnomlunches.us11.list-manage.com/subscribe/post?u=59fd9246d42565cc58bdb06d1&amp;id=a18f62efe2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-									
-									<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" style="width:300px;" required>
-								    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-								    <div style="position: absolute; left: -5000px;"><input type="text" name="b_59fd9246d42565cc58bdb06d1_a18f62efe2" tabindex="-1" value=""></div>
-									<input type="submit" style="display:none"/>
-								</form>
-								</div>
-								<!--End mc_embed_signup-->
-							</div>
-						</div>
-
-						{% if not forloop.last %}
- 						<div class="stories" style="padding-top:40px;">
-						<div>
-						{% endif %}
-						
-	 				{% endif %}
-
-	 				<!-- Creates a new line for more images -->
-	 				{% if forloop.counter|divisibleby:3 and not forloop.last %}
-	 					<div></div>
-	 				{% endif %}
-
- 				{% endfor %}
+ 				{% include short_template %}
 			</div>
 		</div>
  	</div>
@@ -237,7 +193,15 @@
 			<p>NomNom Foods 2015</p>
 		</div>
 	</div>
- 	
 
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <script src="{% static 'endless_pagination/js/endless-pagination.js' %}"></script>
+	    <script>
+	        $.endlessPaginate({
+	            paginateOnScroll: true,
+	            paginateOnScrollMargin: 200,
+	        });
+	</script>
+	  
 	
 </body></html>

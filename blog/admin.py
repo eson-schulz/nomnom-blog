@@ -20,7 +20,7 @@ class PostForm(forms.ModelForm):
 
 class PostAdmin(admin.ModelAdmin):
 	# How the posts are displayed in a list
-	list_display = ('title', 'content', 'author', 'date', 'published')
+	list_display = ('title', 'author', 'date', 'published')
 	# Automatically generate slug based on title
 	prepopulated_fields = {'slug':('title',)}
 	# Organize posts by date
