@@ -167,7 +167,7 @@
  				<div>
  					<h4>LATEST</h4>
  					<h1>{{ latest_post.title }}</h1>
- 					<p>{{ latest_post.content|striptags|truncatechars:280 }}</p>
+ 					<p>{{ latest_post.content|striptags|safe|truncatechars:280 }}</p>
  				</div>
  			</td>
  		</tr>
