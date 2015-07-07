@@ -39,20 +39,19 @@ h1 {
 	font-family: 'Roboto', sans-serif;
 	font-size: 50px;
 	padding: 30px 0;
-	font-style: italic;
 	width: 100%;
 	text-align: center;
 	color: #29ada5;
 }
 
 h2 {
-	font-family: 'Pacifico', cursive;
+	font-family: 'Roboto', sans-serif;
 	font-size: 30px;
 	color: #29ada5
 }
 
 h3 {
-	font-family: 'Pacifico', cursive;
+	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
 	text-align: center;
 	width: 100%;
@@ -69,7 +68,7 @@ h4 {
 }
 
 h5 {
-	font-family: 'Pacifico', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	color: #29ada5;
 	font-weight: 700;
@@ -233,6 +232,11 @@ input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder {
 
 .side_note {
 	text-align: right;
+}
+
+.cursive {
+	font-family: 'Pacifico', cursive;
+	font-style: italic;
 }
 
 /*  IDs  */
