@@ -7,8 +7,8 @@
 		<div class="story_img" style="background-image: url({{ post.image.url }});">
 		</div>
 		<div class="story_content">
-			<h4>{{ post.title }}</h4>
-			<p>{{ post.content|striptags|truncatechars:195 }}
+			<h4>{{ post.title|safe }}</h4>
+			<p>{{ post.content|striptags|safe|truncatechars:195 }}
 			</p>
 		</div>
 	</div>

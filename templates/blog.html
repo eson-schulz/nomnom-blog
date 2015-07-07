@@ -166,7 +166,7 @@
  			<td id="pic1">
  				<div>
  					<h4>LATEST</h4>
- 					<h1>{{ latest_post.title }}</h1>
+ 					<h1>{{ latest_post.title|safe }}</h1>
  					<p>{{ latest_post.content|striptags|safe|truncatechars:280 }}</p>
  				</div>
  			</td>
