@@ -1,6 +1,6 @@
 {% load endless %}
 
-{% paginate 9,3 more_posts %}{% get_pages %}
+{% paginate 9,6 more_posts %}{% get_pages %}
 {% for post in more_posts %}
 	<!-- If it's the center post, draw the lines around -->
 	<div class="story_cell"  {% if forloop.counter|add:"-2"|divisibleby:3 %}style="border-left: #eeeeee 2px solid; border-right: #eeeeee 2px solid"{% endif %} onclick="location.href='post/{{ post.slug }}';">
