@@ -27,7 +27,7 @@ body, p {
 	text-align: center
 }
 
-b {
+b, strong {
 	font-weight: 700
 }
 
@@ -51,6 +51,7 @@ h1 {
 	text-align: center;
 	color: #29ada5;
 	margin-bottom: 15px;
+	line-height: inherit;
 }
 
 h2 {
@@ -93,7 +94,8 @@ td {
 }
 
 li {
-	list-style: disc
+	list-style: disc;
+	text-align: left;
 }
 
 
