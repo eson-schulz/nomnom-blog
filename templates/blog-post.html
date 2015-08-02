@@ -127,6 +127,32 @@
 		#post p {
 			text-align: justify !important;
 		}
+		
+		#post li, #post li * {
+			text-align: left;	
+		}
+		
+		#social_media_buttons {
+			position: fixed;
+			left: 10px;
+			top: 50%;
+			margin-top: -55px;
+		}
+		#social_media_buttons img {
+			border-radius: 50%;
+			margin: 0px 0;
+		}
+		#social_media_buttons img:hover {
+			cursor: pointer;
+		}
+		#social_media_buttons #fb_circle {
+			background-color:#3b5998;
+			border: 2px #3b5998 solid;
+		}
+		#social_media_buttons #twitter_circle {
+			background-color:#55acee;
+			border: 2px #55acee solid;
+		}
 	</style>
 	
 	<link href='http://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,400italic,700,900italic' rel='stylesheet' type='text/css'>
@@ -165,6 +191,12 @@
  		<h4>By {{ post.author.name }}</h4>
  	</div>
  	
+ 	<div id="social_media_buttons">
+		<img src="{% static 'blog/contact/fb_circle_button.png' %}" id="fb_circle" height="50">
+ 		<br>
+		<img src="{% static 'blog/contact/twitter_circle_button.png' %}" id="twitter_circle" height="50">
+ 	</div>
+ 	
  	<table id="pics">
  		<tr>
  			<td><img id="pic1" src="{{ post.image.url }}"></td>
@@ -188,6 +220,7 @@
  		
 	</div>
 		
+<!--
 	<div class="background_teal">
 		<div class="centered_container vertical_padding share">
 			<table>
@@ -210,6 +243,7 @@
 			</table>
 		</div>
 	</div>
+-->
 
 
 	<div class="author blue_theme centered_container">
@@ -228,6 +262,13 @@
 </body>
 
 	<script>
+		$('#fb_circle').click(function(){ 
+		  window.open("http://www.facebook.com/share.php?u=" + document.URL + "&title={{ post.title }}", 'newwindow', 'width=670, height=450');
+		});
+		$('#twitter_circle').click(function(){ 
+		  window.open("http://twitter.com/home?status={{ post.title }}+" + document.URL, 'newwindow', 'width=670, height=450');
+		});
+		
 		var imgs = document.getElementById("post").getElementsByTagName("img");
 		for (var i = 0; i < imgs.length; i++) {
 			console.log(imgs[0].width);
